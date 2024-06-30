@@ -25,10 +25,10 @@ set("n", "<leader>h", ":<C-u>split<CR>")
 set("n", "<leader>v", ":<C-u>vsplit<CR>")
 
 -- Buffers
-set("n", "<leader>]", ":bn<CR>") -- next buffer
-set("n", "<leader>[", ":bp<CR>") -- previous buffer
-set("n", "<leader>w", ":bn<CR>") -- next buffer
-set("n", "<leader>q", ":bp<CR>") -- previous buffer
-set("n", "<leader>c", ":bp|bd #<CR>") -- close buffer
+--set("n", "<leader>]", ":bn<CR>") -- next buffer
+--set("n", "<leader>[", ":bp<CR>") -- previous buffer
+--set("n", "<leader>w", ":bn<CR>") -- next buffer
+--set("n", "<leader>q", ":bp<CR>") -- previous buffer
+--set("n", "<leader>c", ":bp|bd #<CR>") -- close buffer
 
 set("n", "<leader>.", ":noh <CR>") -- :noh
