@@ -10,6 +10,19 @@ local cmp = require "cmp"
 
 local luasnip = require "luasnip"
 
+vim.cmd([[
+  smap <silent> <c-y> <NOP>
+  imap <silent> <c-y> <NOP>
+  nmap <silent> <c-y> <NOP>
+
+  imap <silent><expr> <c-k> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<c-k>'
+  inoremap <silent> <c-j> <cmd>lua require('luasnip').jump(-1)<CR>
+  imap <silent><expr> <C-l> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-l>'
+  snoremap <silent> <c-k> <cmd>lua require('luasnip').jump(1)<CR>
+  snoremap <silent> <c-j> <cmd>lua require('luasnip').jump(-1)<CR>
+]])
+
+
 cmp.setup {
   sources = {
     { name = "nvim_lsp" },
@@ -53,7 +66,7 @@ cmp.setup {
   -- Enable luasnip to handle snippet expansion for nvim-cmp
   snippet = {
     expand = function(args)
-      vim.snippet.expand(args.body)
+      require("luasnip").lsp_expand(args.body)
     end,
   },
 
