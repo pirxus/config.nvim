@@ -105,10 +105,14 @@ return {
           settings = {
             python = {
               analysis = {
+                typeCheckingMode = 'off',
                 reportPrivateImportUsage = false,
                 reportMissingImports = false,
                 reportMissingModuleSource = false,
-                reportUnboundVariable = false,
+                --reportUnboundVariable = false,
+                --reportGeneralTypeIssues = false,
+                --reportPropertyTypeMismatch = false,
+                --reportArgumentType = false,
               },
             },
           },
@@ -165,8 +169,8 @@ return {
         "stylua", -- Used to format Lua code
         "bashls",
         "lua_ls",
-        "pyright",
         "clangd",
+        "pyright",
         "rust_analyzer",
       })
       require("mason-tool-installer").setup { ensure_installed = ensure_installed }

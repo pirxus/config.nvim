@@ -52,7 +52,7 @@ opt.shada = { "!", "'1000", "<50", "s10", "h" }
 opt.termguicolors = true
 
 -- statusline
---opt.winbar = "%=%m %f"
+opt.winbar = "%=%m %f"
 --opt.laststatus = 3
 
 -- Some stuff taken from TJ... FIXME
