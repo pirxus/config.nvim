@@ -14,6 +14,9 @@ return {
       -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
       -- used for completion, annotations and signatures of Neovim apis
       { "folke/neodev.nvim", opts = {} },
+
+      -- Autoformatting
+      "stevearc/conform.nvim",
     },
     config = function()
       -- Brief aside: **What is LSP?**
@@ -183,43 +186,38 @@ return {
           end,
         },
       }
-    end,
-  },
 
-  { -- Autoformat
-    "stevearc/conform.nvim",
-    lazy = false,
-    keys = {
-      {
-        "<leader>f",
-        function()
-          require("conform").format { async = true, lsp_fallback = true }
+      local conform = require "conform"
+      conform.setup {
+        formatters_by_ft = {
+          lua = { "stylua" },
+          blade = { "blade-formatter" },
+        },
+      }
+
+      conform.formatters.injected = {
+        options = {
+          ignore_errors = false,
+          lang_to_formatters = {
+            sql = { "sleek" },
+          },
+        },
+      }
+
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        callback = function(args)
+          if vim.bo.filetype == "rust" then --NOTE: diable Autoformatting for rust
+            print(vim.bo.filetype)
+            return
+          else
+            require("conform").format {
+              bufnr = args.buf,
+              lsp_fallback = true,
+              quiet = true,
+            }
+          end
         end,
-        mode = "",
-        desc = "[F]ormat buffer",
-      },
-    },
-    opts = {
-      notify_on_error = false,
-      format_on_save = function(bufnr)
-        -- Disable "format_on_save lsp_fallback" for languages that don't
-        -- have a well standardized coding style. You can add additional
-        -- languages here or re-enable it for the disabled ones.
-        local disable_filetypes = { c = true, cpp = true }
-        return {
-          timeout_ms = 500,
-          lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
-        }
-      end,
-      formatters_by_ft = {
-        lua = { "stylua" },
-        -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
-        --
-        -- You can use a sub-list to tell conform to run *until* a formatter
-        -- is found.
-        -- javascript = { { "prettierd", "prettier" } },
-      },
-    },
+      })
+    end,
   },
 }
