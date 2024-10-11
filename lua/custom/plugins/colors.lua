@@ -54,6 +54,7 @@ return {
             ["@function.builtin"] = { style = "bold" },
             ["@keyword.function"] = { fg = "#fBa8d3", style = "bold" },
             ["@variable.builtin"] = { fg = "#aaaaaa", style = "bold" },
+            ["@string.documentation.python"] = { link = "Comment" },
             PmenuSel = { fg = "#303030", bg = "#fbafba" },
             --    --TSKeyword = { style = "bold"},
             --    --TSString = { fg = "#a3be8c" },
