@@ -14,8 +14,15 @@ return {
             comments = "italic",
           },
         },
-        palletes = {
+        palettes = {
           terafox = {
+            bg = "#020005",
+            bg1 = "#020325",
+            --bg0 = "#020305",
+            bg0 = "#020325",
+            fg = "#eaeaea",
+          },
+          carbonfox = {
             bg = "#020005",
             fg = "#eaeaea",
           },
@@ -41,6 +48,9 @@ return {
             LineNrAbove = { fg = "#587b7b" },
             LineNrBelow = { fg = "#587b7b" },
             WinSeparator = { fg = "#a0b0d0" },
+            --PreProc = { fg = "#aaaafa" },
+            Keyword = { fg = "#aaaafa" },
+            DiagnosticUnnecessary = { fg = "#3f4c4e" },
             --["@keyword.return"] = {fg = "#fbafaa" },
             --Operator = { fg = "#dd70aa", style = "bold" },
             --["@comment.note"] = { fg = "#000000", bg = "#4bcca1" },
@@ -81,10 +91,17 @@ return {
             ["@lsp.type.selfTypeKeyword.rust"] = { fg = "#aaaafa" },
             ["@lsp.typemod.macro.defaultLibrary.rust"] = { fg = "#fbafaa" },
             ["@lsp.typemod.method.defaultLibrary.rust"] = { fg = "#73a3b7" },
+
+            ["@number.odin"] = { fg = "#a1d3b8" },
+            ["@number.float.odin"] = { fg = "#a1d3b8" },
+            ["@type.odin"] = { fg = "#dcf5ae" },
+            ["@constant.odin"] = { fg = "#ff9664" },
+            ["@function.call.odin"] = { fg = "#73a3b7" },
+            ["@function.odin"] = { fg = "#73a3b7", style="bold" },
           },
         },
       }
-
+ 
       -- Set the colorscheme
       vim.cmd.colorscheme "terafox"
     end,
