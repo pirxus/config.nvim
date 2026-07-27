@@ -10,6 +10,9 @@ return {
           inverse = {
             match_paren = false,
           },
+          styles = {
+            comments = "italic",
+          },
         },
         palletes = {
           terafox = {
@@ -17,7 +20,6 @@ return {
             fg = "#eaeaea",
           },
           duskfox = {
-            --bg = "#020809"
             bg = "#020005",
             fg = "#eaeaea",
           },
@@ -38,6 +40,9 @@ return {
             TelescopeLineNr = { fg = "#587b7b" },
             LineNrAbove = { fg = "#587b7b" },
             LineNrBelow = { fg = "#587b7b" },
+            WinSeparator = { fg = "#a0b0d0" },
+            --["@keyword.return"] = {fg = "#fbafaa" },
+            --Operator = { fg = "#dd70aa", style = "bold" },
             --["@comment.note"] = { fg = "#000000", bg = "#4bcca1" },
             ["@comment.note"] = { fg = "#000000" },
             ["@comment.warning"] = { fg = "#000000" },
@@ -54,12 +59,14 @@ return {
             --    TSFloat = { fg = "#fa6181" },
             --    TSFuncBuiltin = { fg = "#3acaca"},
             ["@type.builtin"] = { fg = "#dba8c3" },
+            ["@module"] = { fg = "#eaeaea" },
             ["@constructor"] = { style = "bold" },
             ["@keyword.operator"] = { fg = "#dd70aa", style = "bold" },
             ["@function.builtin"] = { style = "bold" },
             ["@keyword.function"] = { fg = "#fBa8d3", style = "bold" },
             ["@variable.builtin"] = { fg = "#aaaaaa", style = "bold" },
             PmenuSel = { fg = "#303030", bg = "#fbafba" },
+            --NormalFloat = { fg = "#e6eaea", bg = "#1f2c2e"},--"#293e40" },
             --    --TSKeyword = { style = "bold"},
             --    --TSString = { fg = "#a3be8c" },
             --    --cIncluded = { fg = "#fa6181" },
@@ -80,12 +87,6 @@ return {
 
       -- Set the colorscheme
       vim.cmd.colorscheme "terafox"
-    end,
-  },
-  {
-    "norcalli/nvim-colorizer.lua",
-    config = function()
-      require("colorizer").setup()
     end,
   },
 }
