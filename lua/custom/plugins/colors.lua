@@ -17,9 +17,11 @@ return {
         palettes = {
           terafox = {
             bg = "#020005",
-            bg1 = "#020325",
+            --bg1 = "#020325",
+            bg1 = "#020305",
             --bg0 = "#020305",
-            bg0 = "#020325",
+            --bg0 = "#020315",
+            bg0 = "#020305",
             fg = "#eaeaea",
           },
           carbonfox = {
@@ -48,8 +50,7 @@ return {
             LineNrAbove = { fg = "#587b7b" },
             LineNrBelow = { fg = "#587b7b" },
             WinSeparator = { fg = "#a0b0d0" },
-            --PreProc = { fg = "#aaaafa" },
-            Keyword = { fg = "#aaaafa" },
+            PreProc = { fg = "#8a8acf" },
             DiagnosticUnnecessary = { fg = "#3f4c4e" },
             --["@keyword.return"] = {fg = "#fbafaa" },
             --Operator = { fg = "#dd70aa", style = "bold" },
@@ -91,17 +92,31 @@ return {
             ["@lsp.type.selfTypeKeyword.rust"] = { fg = "#aaaafa" },
             ["@lsp.typemod.macro.defaultLibrary.rust"] = { fg = "#fbafaa" },
             ["@lsp.typemod.method.defaultLibrary.rust"] = { fg = "#73a3b7" },
+            -- ["@lsp.type.keyword.rust"] = { fg = "#e85c51" }, TODO: priority for rust needs to be changed
 
-            ["@number.odin"] = { fg = "#a1d3b8" },
-            ["@number.float.odin"] = { fg = "#a1d3b8" },
-            ["@type.odin"] = { fg = "#dcf5ae" },
-            ["@constant.odin"] = { fg = "#ff9664" },
-            ["@function.call.odin"] = { fg = "#73a3b7" },
-            ["@function.odin"] = { fg = "#73a3b7", style="bold" },
+            --Number = { fg = "#a1d3b8" },
+            Number = { fg = "#dcf5ae" },
+            --["@number.odin"] = { fg = "#a1d3b8" },
+            --["@number.float.odin"] = { fg = "#a1d3b8" },
+            --["@type.odin"] = { fg = "#dcf5ae" },
+            --["@constant.odin"] = { fg = "#ff9664" },
+            --["@function.call.odin"] = { fg = "#73a3b7" },
+            --["@function.odin"] = { fg = "#73a3b7", style="bold" },
+            --["@keyword.odin"] = { fg = "#aaaafa" },
+            ["@keyword.odin"] = { fg = "#e85c51" },
+
+            --["@function.builtin.python"] = { fg = "#83b3c7", style="bold" },
+            ["@function.builtin.python"] = { fg = "#fbafaa", style="bold" },
+            --["@string.documentation.python"] = { fg = "#4d9f9b", style="italic" },
+            --["@string.documentation.python"] = { fg = "#6a6a8a"},-- style="italic" },
+            ["@string.documentation.python"] = { fg = "#6d7f8b", style="italic" },
+            --["@string.documentation.python"] = { fg = "#587b7b", style="italic" },
+            --["@constant.python"] = { fg = "#dcf5ae" },
+            Constant = { fg = "#dcf5ae" },
           },
         },
       }
- 
+
       -- Set the colorscheme
       vim.cmd.colorscheme "terafox"
     end,
