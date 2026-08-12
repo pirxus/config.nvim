@@ -1,4 +1,75 @@
 return {
+   {
+    lazy = false,
+    priority = 1000,
+    -- dir = "~/plugins/colorbuddy.nvim",
+    "tjdevries/colorbuddy.nvim",
+    config = function()
+      --vim.cmd.colorscheme "gruvbuddy"
+
+
+      --local colorbuddy = require('colorbuddy')
+
+      ---- Set up your custom colorscheme if you want
+      --colorbuddy.colorscheme("my-colorscheme-name")
+
+      ---- And then modify as you like
+      --local Color = colorbuddy.Color
+      --local colors = colorbuddy.colors
+      --local Group = colorbuddy.Group
+      --local groups = colorbuddy.groups
+      --local styles = colorbuddy.styles
+
+      ---- Use Color.new(<name>, <#rrggbb>) to create new colors
+      ---- They can be accessed through colors.<name>
+      ----Color.new('background',  '#282c34')
+      --Color.new('background',  '#020005')
+      --Color.new('gray0',  '#020005')
+      --Color.new('foreground',  '#282c34')
+      --Color.new('red',         '#cc6666')
+      --Color.new('green',       '#99cc99')
+      --Color.new('yellow',      '#f0c674')
+
+      ---- Define highlights in terms of `colors` and `groups`
+      --Group.new('Function'        , colors.yellow      , colors.background , styles.bold)
+      --Group.new('luaFunctionCall' , groups.Function    , groups.Function   , groups.Function)
+
+      ---- Define highlights in relative terms of other colors
+      --Group.new('Error'           , colors.red:light() , nil               , styles.bold)
+
+      ---- If you want multiple styles, just add them!
+      --Group.new('italicBoldFunction', colors.green, groups.Function, styles.bold + styles.italic)
+
+      ---- If you want the same style as a different group, but without a style: just subtract it!
+      --Group.new('boldFunction', colors.yellow, colors.background, groups.italicBoldFunction - styles.italic)
+
+
+
+    end,
+  },
+  {
+    "tinted-theming/tinted-nvim",
+    priority = 1000, -- load colorscheme early
+    lazy = false,    -- apply on startup
+    --config = function()
+    --  require("tinted-nvim").setup({
+    --    default_scheme = "base16-ayu-dark",
+    --  })
+    --end,
+  },
+  {
+    "vague-theme/vague.nvim",
+    config = function()
+      require("vague").setup {
+        colors = {
+          bg = "#020005",
+          --fg = "#eaeaea",
+          --string = "#61c398",
+        },
+      }
+      vim.cmd.colorscheme "vague"
+    end,
+  },
   {
     "EdenEast/nightfox.nvim",
     lazy = false,
@@ -116,13 +187,14 @@ return {
             ["@string.documentation.python"] = { fg = "#6d7f8b", style="italic" },
             --["@string.documentation.python"] = { fg = "#587b7b", style="italic" },
             --["@constant.python"] = { fg = "#dcf5ae" },
-            Constant = { fg = "#dcf5ae" },
+            --Constant = { fg = "#dcf5ae" },
+            --Constant = { fg = "#fbafaa" },
           },
         },
       }
 
       -- Set the colorscheme
-      vim.cmd.colorscheme "terafox"
+      --vim.cmd.colorscheme "terafox"
     end,
   },
 }
