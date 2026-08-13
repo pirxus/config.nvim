@@ -1,9 +1,8 @@
 return {
    {
+    "tjdevries/colorbuddy.nvim",
     lazy = false,
     priority = 1000,
-    -- dir = "~/plugins/colorbuddy.nvim",
-    "tjdevries/colorbuddy.nvim",
     config = function()
       --vim.cmd.colorscheme "gruvbuddy"
 
@@ -67,7 +66,7 @@ return {
           --string = "#61c398",
         },
       }
-      vim.cmd.colorscheme "vague"
+      --vim.cmd.colorscheme "vague"
     end,
   },
   {
@@ -116,20 +115,40 @@ return {
         groups = { -- /home/pirx/.local/share/nvim/site/pack/packer/start/nightfox.nvim/lua/nightfox
           -- FIXME : function and type groups do not work properly -> setup somehow ignoring them
           terafox = {
-            LineNr = { fg = "#e0a03f", style = "bold" },
-            TelescopeLineNr = { fg = "#587b7b" },
-            LineNrAbove = { fg = "#587b7b" },
-            LineNrBelow = { fg = "#587b7b" },
+            --LineNr = { fg = "#e0a03f", style = "bold" },
+            LineNr = { fg = "#cce59e", style = "bold" },
+            --TelescopeLineNr = { fg = "#587b7b" },
+            TelescopeLineNr = { fg = "#284b5b" },
+            --LineNrAbove = { fg = "#587b7b" },
+            --LineNrBelow = { fg = "#587b7b" },
+            LineNrAbove = { fg = "#385b6b" },
+            LineNrBelow = { fg = "#385b6b" },
             WinSeparator = { fg = "#a0b0d0" },
-            PreProc = { fg = "#8a8acf" },
-            DiagnosticUnnecessary = { fg = "#3f4c4e" },
-            --["@keyword.return"] = {fg = "#fbafaa" },
-            --Operator = { fg = "#dd70aa", style = "bold" },
-            --["@comment.note"] = { fg = "#000000", bg = "#4bcca1" },
+            PmenuSel = { fg = "#303030", bg = "#fbafba" },
+            Pmenu = { bg = "#070825" },
+            NormalFloat = { fg = "#e6eaea", bg = "#070825"},--"#293e40" },
+            Visual = { bg = "#2a3b58" },
+            Search = { bg = "#2a3b58" },
+            IncSearch = { bg = "#dba8c3"},-- fg = "#e6eaea" },
+
             ["@comment.note"] = { fg = "#000000" },
             ["@comment.warning"] = { fg = "#000000" },
             ["@comment.error"] = { fg = "#000000" },
             ["@comment.todo"] = { fg = "#000000" },
+            DiagnosticUnnecessary = { fg = "#3f4c4e" },
+
+            PreProc = { fg = "#8a8acf" },
+            Number = { fg = "#dcf5ae"},-- style="italic" },
+            --Number = { fg = "#a1d3b8" },
+            --Number = { fg = "#dcf5ae" },
+            --Constant = { fg = "#dcf5ae" },
+            --Constant = { fg = "#fbafaa" },
+            --Constant = { fg = '#fda47f' },-- '#fda47f' },
+            Constant = { fg = "#fb91a0" },
+            --Constant = { fg = '#aaaafa' },-- '#fda47f' },
+            --Operator = { fg = "#dd70aa", style = "bold" },
+            --["@keyword.return"] = {fg = "#fbafaa" },
+            --["@comment.note"] = { fg = "#000000", bg = "#4bcca1" },
             --LineNrAbove = { fg = "#a0b0d0" },
             --LineNrBelow = { fg = "#a0b0d0" },
             --    TSLiteral = { fg = "#6090a0" },
@@ -144,15 +163,9 @@ return {
             ["@module"] = { fg = "#eaeaea" },
             ["@constructor"] = { style = "bold" },
             ["@keyword.operator"] = { fg = "#dd70aa", style = "bold" },
-            ["@function.builtin"] = { style = "bold" },
+            ["@function.builtin"] = { fg = "#fbafaa", style="bold" },
             ["@keyword.function"] = { fg = "#fBa8d3", style = "bold" },
             ["@variable.builtin"] = { fg = "#aaaaaa", style = "bold" },
-            PmenuSel = { fg = "#303030", bg = "#fbafba" },
-            Pmenu = { bg = "#070825" },
-            NormalFloat = { fg = "#e6eaea", bg = "#070825"},--"#293e40" },
-            Visual = { bg = "#2a3b58" },
-            Search = { bg = "#2a3b58" },
-            IncSearch = { bg = "#dba8c3"},-- fg = "#e6eaea" },
             --    --TSKeyword = { style = "bold"},
             --    --TSString = { fg = "#a3be8c" },
             --    --cIncluded = { fg = "#fa6181" },
@@ -162,15 +175,13 @@ return {
             ["@lsp.type.property.rust"] = { fg = "#a1e3c8" },
             ["@lsp.type.parameter.rust"] = { link = "Variable" },
             ["@variable.member.rust"] = { link = "@lsp.type.property.rust" },
+            ["@lsp.type.selfTypeKeyword.rust"] = { fg = "#aaaafa" },
             ["@lsp.type.enum.rust"] = { fg = "#dcf5ae" },
             ["@lsp.typemod.enum.defaultLibrary.rust"] = { fg = "#dcf5ae", style = "bold" },
-            ["@lsp.type.selfTypeKeyword.rust"] = { fg = "#aaaafa" },
             ["@lsp.typemod.macro.defaultLibrary.rust"] = { fg = "#fbafaa" },
             ["@lsp.typemod.method.defaultLibrary.rust"] = { fg = "#73a3b7" },
-            -- ["@lsp.type.keyword.rust"] = { fg = "#e85c51" }, TODO: priority for rust needs to be changed
+            --["@lsp.type.keyword.rust"] = { fg = "#e85c51" }, TODO: priority for rust needs to be changed
 
-            --Number = { fg = "#a1d3b8" },
-            Number = { fg = "#dcf5ae" },
             --["@number.odin"] = { fg = "#a1d3b8" },
             --["@number.float.odin"] = { fg = "#a1d3b8" },
             --["@type.odin"] = { fg = "#dcf5ae" },
@@ -180,21 +191,17 @@ return {
             --["@keyword.odin"] = { fg = "#aaaafa" },
             ["@keyword.odin"] = { fg = "#e85c51" },
 
-            --["@function.builtin.python"] = { fg = "#83b3c7", style="bold" },
-            ["@function.builtin.python"] = { fg = "#fbafaa", style="bold" },
-            --["@string.documentation.python"] = { fg = "#4d9f9b", style="italic" },
-            --["@string.documentation.python"] = { fg = "#6a6a8a"},-- style="italic" },
+            ["@function.builtin.python"] = { link = "@function.builtin" },
+            --["@boolean.python"] = { fg = "#dcf5ae", style="bold" },
             ["@string.documentation.python"] = { fg = "#6d7f8b", style="italic" },
-            --["@string.documentation.python"] = { fg = "#587b7b", style="italic" },
             --["@constant.python"] = { fg = "#dcf5ae" },
-            --Constant = { fg = "#dcf5ae" },
-            --Constant = { fg = "#fbafaa" },
+
           },
         },
       }
 
       -- Set the colorscheme
-      --vim.cmd.colorscheme "terafox"
+      vim.cmd.colorscheme "terafox"
     end,
   },
 }

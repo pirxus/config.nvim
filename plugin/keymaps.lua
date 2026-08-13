@@ -49,4 +49,5 @@ set("x", "<leader>p", [["_dP]])
 
 set("n", "Q", "<nop>")
 
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+set("n", "<leader>pv", vim.cmd.Ex)
+set("n", ",i", ":Inspect<CR>")
